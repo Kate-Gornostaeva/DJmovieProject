@@ -2,19 +2,33 @@
 
 {% block title %}Фильмы{% endblock %}
 
-</head>
-<body>
-
 {% block content %}
-<h1>Фильмы</h1>
-{% for film in films %}
-    <div>
-        <h3>{{film.name}} </h3>
-        <p>{{film.description}} </p>
-        <p>{{film.review}}</p>
-    </div>
-{% endfor %}
-{% endblock %}
+<div class="container-fluid mt-4 px-0">
+    <h1 class="mb-4">Фильмы</h1>
 
-</body>
-</html>
+    {% if films %}
+        <div class="row g-0">
+            {% for film in films %}
+                <div class="col-12">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h3 class="card-title">{{ film.name }}</h3>
+                            <p class="card-text">{{ film.description }}</p>
+
+                            <!-- Отдельный блок для отзыва -->
+                            <div class="mt-3 pt-3 border-top">
+                                <h5 class="card-subtitle mb-2 text-muted">Отзыв о фильме</h5>
+                                <p class="card-text">{{ film.review }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="alert alert-info" role="alert">
+            Тут пока ничего нет
+        </div>
+    {% endif %}
+</div>
+{% endblock %}

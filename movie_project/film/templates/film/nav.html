@@ -1,6 +1,11 @@
-<ul>
-  <li><a href="{% url 'film:index' %}">Home</a></li>
-  <li><a href="{% url 'film:about' %}">About</a></li>
+<nav class="navbar navbar-dark bg-dark flex-md-column align-items-start p-3">
+    <ul class="navbar-nav flex-md-column w-100">
+        <li class="nav-item">
+            <a class="nav-link active" href="{% url 'film:index' %}">Напиши свой отзыв</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'film:about' %}">Отзывы</a>
+        </li>
 
-
-</ul>
+    </ul>
+</nav>

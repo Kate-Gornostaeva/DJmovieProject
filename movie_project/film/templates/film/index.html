@@ -7,6 +7,14 @@
 
 {% block content %}
 
+<h1>Напиши свой отзыв</h1>
+<form method="post" action="">
+    {% csrf_token %}
+    {{ form.name }}
+    {{ form.description }}
+    {{ form.review }}
+    <button type="submit">Отправить</button>
+</form>
 
 {% endblock %}
 
